@@ -33,8 +33,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh "${env.SCANNER_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectKey=EKART \
-                        -Dsonar.projectName=EKART \
+                        -Dsonar.projectKey=EKARTT \
+                        -Dsonar.projectName=EKARTT \
                         -Dsonar.java.binaries=target/classes"
                 }
             }
@@ -64,7 +64,7 @@ pipeline {
         stage('build and Tag docker image') {
             steps {
                 script {
-                        sh "docker build -t youngminds73/ekart:latest -f docker/Dockerfile ."
+                        sh "docker build -t shivanib07/ekartt:latest -f docker/Dockerfile ."
                     }
             }
         }
